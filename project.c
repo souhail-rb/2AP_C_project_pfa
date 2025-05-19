@@ -9,7 +9,7 @@
     #define CLEAR "clear"
 #endif
 
-// Structure for product
+
 typedef struct Product {
     int id;
     char name[50];
@@ -18,7 +18,7 @@ typedef struct Product {
     struct Product *next;
 } Product;
 
-// Function prototypes
+
 void pressAnyKeyToContinue();
 void mainMenu();
 void productManagementMenu(Product **list);
@@ -49,44 +49,44 @@ int main() {
 
 void pressAnyKeyToContinue() {
     printf("\n\t\t\t\t\t\tPress any key to continue...");
-    getchar(); // Clear input buffer
-    getchar(); // Wait for key press
+    getchar();
+    getchar(); 
 }
 
-// Display header
+// header
 void displayHeader() {
     system(CLEAR);
-    printf("\033[1;31m"); // Red
+    printf("\033[1;31m"); 
     printf("\n\t\t\t\t\t\t\t  ╔██╗    ██╗ ╔███████╗ ██╗      ██████╗   ██████╗  ███╗   ███╗ ███████╗\n");
     printf("\t\t\t\t\t\t\t  ║██║    ██║ ║██╔════╝ ██║     ██╔════█  ██╔═══██╗ ████╗ ████║ ██╔════╝\n");
     printf("\t\t\t\t\t\t\t  ║██║ █╗ ██║ ║█████╗   ██║     ██║       ██║   ██║ ██╔████╔██║ █████╗  \n");
     printf("\t\t\t\t\t\t\t  ║██║███╗██║ ║██╔══╝   ██║     ██║    █  ██║   ██║ ██║╚██╔╝██║ ██╔══╝  \n");
     printf("\t\t\t\t\t\t\t   ╚███╔███╔╝ ║███████╗ ███████╗ ██████╝  ╚██████╔╝ ██║ ╚═╝ ██║ ███████╗\n");
     printf("\t\t\t\t\t\t\t    ╚══╝╚══╝  ╚═══════╝ ╚══════╝ ╚════╝    ╚═════╝  ╚═╝     ╚═╝ ╚══════╝\n\n");
-    printf("\033[0m"); // Reset
+    printf("\033[0m");
     
-    printf("\033[1;36m"); // Cyan
+    printf("\033[1;36m");
     printf("\t\t\t\t\t\t======================================================================\n");
     printf("\t\t\t\t\t\t      |||||||||||  Product Inventory Management System  ||||||||||\n");
     printf("\t\t\t\t\t\t======================================================================\n");
-    printf("\033[0m"); // Reset
+    printf("\033[0m"); 
 }
 
-// Display footer
+// footer
 void displayFooter() {
     system(CLEAR);
-    printf("\033[0;32m"); // Green
+    printf("\033[0;32m");
     printf("\n\n\t\t\t\t\t\t :) Program terminated successfully!!\n\n\n");
-    printf("\033[0m"); // Reset
+    printf("\033[0m");
     
-    printf("\033[0;31m"); // Red
+    printf("\033[0;31m"); 
     printf("\n\t\t\t\t\t\t\t████████╗██╗  ██╗ █████╗ ███╗   ██╗██╗  ██╗    ██╗   ██╗ ██████╗ ██╗   ██╗\n");
     printf("\t\t\t\t\t\t\t╚══██╔══╝██║  ██║██╔══██╗████╗  ██║██║ ██╔╝    ╚██╗ ██╔╝██╔═══██╗██║   ██║\n");
     printf("\t\t\t\t\t\t\t   ██║   ███████║███████║██╔██╗ ██║█████╔╝      ╚████╔╝ ██║   ██║██║   ██║\n");
     printf("\t\t\t\t\t\t\t   ██║   ██╔══██║██╔══██║██║╚██╗██║██╔═██╗       ╚██╔╝  ██║   ██║██║   ██║\n");
     printf("\t\t\t\t\t\t\t   ██║   ██║  ██║██║  ██║██║ ╚████║██║  ██╗       ██║   ╚██████╔╝╚██████╔╝\n");
     printf("\t\t\t\t\t\t\t   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝       ╚═╝    ╚═════╝  ╚═════╝ \n\n");
-    printf("\033[0m"); // Reset
+    printf("\033[0m");
 }
 
 // Main menu
@@ -98,13 +98,13 @@ void mainMenu() {
         system(CLEAR);
         displayHeader();
         
-        printf("\033[1;33m"); // Yellow
+        printf("\033[1;33m"); 
         printf("\t\t\t\t\t\t1. launch the program\n");
         printf("\t\t\t\t\t\t2. Exit\n");
-        printf("\033[0m"); // Reset
-        printf("\033[1;36m"); // Cyan
+        printf("\033[0m"); 
+        printf("\033[1;36m");
         printf("\t\t\t\t\t\t======================================================================\n");
-        printf("\033[0m"); // Reset
+        printf("\033[0m");
         printf("\t\t\t\t\t\t * Enter your choice: ");
         scanf("%d", &choice);
 
@@ -116,14 +116,14 @@ void mainMenu() {
                 displayFooter();
                 break;
             default:
-                printf("\033[0;31m"); // Red
+                printf("\033[0;31m"); 
                 printf("\n\t\t\t\t\t\t\t :( Invalid choice. Please try again!\n");
-                printf("\033[0m"); // Reset
+                printf("\033[0m"); 
                 pressAnyKeyToContinue();
         }
     } while(choice != 2);
 
-    // Free memory before exiting
+    // Free memory 
     Product *temp;
     while(productList != NULL) {
         temp = productList;
@@ -140,17 +140,17 @@ void productManagementMenu(Product **list) {
         system(CLEAR);
         displayHeader();
         
-        printf("\033[1;33m"); // Yellow
+        printf("\033[1;33m"); 
         printf("\n\t\t\t\t\t\t1. Add a new product\n");
         printf("\t\t\t\t\t\t2. Search for a product\n");
         printf("\t\t\t\t\t\t3. Modify a product\n");
         printf("\t\t\t\t\t\t4. Delete a product\n");
         printf("\t\t\t\t\t\t5. Generate a Report \n");
         printf("\t\t\t\t\t\t6. Return to main menu\n");
-        printf("\033[0m"); // Reset
-        printf("\033[1;36m"); // Cyan
+        printf("\033[0m"); 
+        printf("\033[1;36m"); 
         printf("\t\t\t\t\t\t======================================================================\n");
-        printf("\033[0m"); // Reset
+        printf("\033[0m");
         printf("\t\t\t\t\t\t * Enter your choice: ");
         scanf("%d", &choice);
 
@@ -171,41 +171,41 @@ void productManagementMenu(Product **list) {
                 generateReport(*list);
                 break;
             case 6:
-                printf("\033[0;32m"); // Green
+                printf("\033[0;32m");
                 printf("\n\t\t\t\t\t\t\t Returning to main menu...\n");
-                printf("\033[0m"); // Reset
+                printf("\033[0m");
                 pressAnyKeyToContinue();
                 break;
             default:
-                printf("\033[0;31m"); // Red
+                printf("\033[0;31m");
                 printf("\n\t\t\t\t\t\t\t :( Invalid choice. Please try again!\n");
-                printf("\033[0m"); // Reset
+                printf("\033[0m");
                 pressAnyKeyToContinue();
         }
     } while(choice != 6);
 }
 
-// Add a new product
+// Add product
 void addProduct(Product **list) {
     system(CLEAR);
     displayHeader();
     
     Product *newProduct = (Product*)malloc(sizeof(Product));
 
-    printf("\033[1;35m"); // Magenta
+    printf("\033[1;35m"); 
     printf("\n\t\t\t\t\t\t\t      * Add a New Product * \n");
-    printf("\033[0m"); // Reset
+    printf("\033[0m"); 
     
     printf("\t\t\t\t\t\tProduct ID: ");
     scanf("%d", &newProduct->id);
 
-    // Check if ID already exists
+    // Check if ID exists
     Product *temp = *list;
     while(temp != NULL) {
         if(temp->id == newProduct->id) {
-            printf("\033[0;31m"); // Red
+            printf("\033[0;31m");
             printf("\n\t\t\t\t\t\t\t :( A product with this ID already exists!\n");
-            printf("\033[0m"); // Reset
+            printf("\033[0m");
             free(newProduct);
             pressAnyKeyToContinue();
             return;
@@ -223,29 +223,29 @@ void addProduct(Product **list) {
     newProduct->next = *list;
     *list = newProduct;
 
-    printf("\033[0;32m"); // Green
+    printf("\033[0;32m");
     printf("\n\t\t\t\t\t\t\t :) Product added successfully!\n");
-    printf("\033[0m"); // Reset
+    printf("\033[0m");
     pressAnyKeyToContinue();
 }
 
-// Search for a product
+// Search product
 void searchProduct(Product *list) {
     system(CLEAR);
     displayHeader();
     
     if(list == NULL) {
-        printf("\033[0;31m"); // Red
+        printf("\033[0;31m"); 
         printf("\n\t\t\t\t\t\t\t :( The product list is empty!\n");
-        printf("\033[0m"); // Reset
+        printf("\033[0m"); 
         pressAnyKeyToContinue();
         return;
     }
 
     int choice;
-    printf("\033[1;35m"); // Magenta
+    printf("\033[1;35m"); 
     printf("\n\t\t\t\t\t\t\t      * Search for a Product * \n");
-    printf("\033[0m"); // Reset
+    printf("\033[0m");  
     
     printf("\t\t\t\t\t\t1. By ID\n");
     printf("\t\t\t\t\t\t2. By name\n");
@@ -258,9 +258,9 @@ void searchProduct(Product *list) {
     system(CLEAR);
     displayHeader();
     
-    printf("\033[1;35m"); // Magenta
+    printf("\033[1;35m");  
     printf("\n\t\t\t\t\t\t\t      * Search Results * \n");
-    printf("\033[0m"); // Reset
+    printf("\033[0m");  
     
     printf("\t\t\t\t\t\t------------------------------------------------------------\n");
     printf("\t\t\t\t\t\t| %-10s | %-20s | %-10s | %-10s |\n", "ID", "Product Name", "Quantity", "Price");
@@ -300,9 +300,9 @@ void searchProduct(Product *list) {
     }
 
     if(!found) {
-        printf("\033[0;31m"); // Red
+        printf("\033[0;31m");  
         printf("\n\t\t\t\t\t\t\t :( No products found!\n");
-        printf("\033[0m"); // Reset
+        printf("\033[0m");  
     }
 
     printf("\t\t\t\t\t\t------------------------------------------------------------\n");
@@ -315,17 +315,17 @@ void modifyProduct(Product *list) {
     displayHeader();
     
     if(list == NULL) {
-        printf("\033[0;31m"); // Red
+        printf("\033[0;31m");  
         printf("\n\t\t\t\t\t\t\t :( The product list is empty!\n");
-        printf("\033[0m"); // Reset
+        printf("\033[0m");  
         pressAnyKeyToContinue();
         return;
     }
 
     int id;
-    printf("\033[1;35m"); // Magenta
+    printf("\033[1;35m");  
     printf("\n\t\t\t\t\t\t\t      * Modify a Product * \n");
-    printf("\033[0m"); // Reset
+    printf("\033[0m");  
     
     printf("\t\t\t\t\t\tEnter product ID to modify: ");
     scanf("%d", &id);
@@ -333,17 +333,17 @@ void modifyProduct(Product *list) {
     Product *temp = list;
     while(temp != NULL) {
         if(temp->id == id) {
-            printf("\033[1;34m"); // Blue
+            printf("\033[1;34m");  
             printf("\n\t\t\t\t\t\t\t      * Product Found: * \n");
-            printf("\033[0m"); // Reset
+            printf("\033[0m");  
             
             printf("\t\t\t\t\t\tProduct ID | Product Name | Quantity in Stock | Price |\n");
             printf("\t\t\t\t\t\t%-10d | %-11s | %-17d | %.2f USD |\n",
                    temp->id, temp->name, temp->quantity, temp->price);
 
-            printf("\033[1;33m"); // Yellow
+            printf("\033[1;33m");  
             printf("\n\t\t\t\t\t\tEnter new information:\n");
-            printf("\033[0m"); // Reset
+            printf("\033[0m");  
             
             printf("\t\t\t\t\t\tNew name: ");
             scanf(" %[^\n]", temp->name);
@@ -352,18 +352,18 @@ void modifyProduct(Product *list) {
             printf("\t\t\t\t\t\tNew price: ");
             scanf("%f", &temp->price);
 
-            printf("\033[0;32m"); // Green
+            printf("\033[0;32m");  
             printf("\n\t\t\t\t\t\t\t :) Product modified successfully!\n");
-            printf("\033[0m"); // Reset
+            printf("\033[0m");  
             pressAnyKeyToContinue();
             return;
         }
         temp = temp->next;
     }
 
-    printf("\033[0;31m"); // Red
+    printf("\033[0;31m");  
     printf("\n\t\t\t\t\t\t\t :( Product with ID %d not found!\n", id);
-    printf("\033[0m"); // Reset
+    printf("\033[0m");  
     pressAnyKeyToContinue();
 }
 
@@ -373,9 +373,9 @@ void deleteProduct(Product **list) {
     displayHeader();
     
     if(*list == NULL) {
-        printf("\033[0;31m"); // Red
+        printf("\033[0;31m");  
         printf("\n\t\t\t\t\t\t\t :( The product list is empty!\n");
-        printf("\033[0m"); // Reset
+        printf("\033[0m");  
         pressAnyKeyToContinue();
         return;
     }
@@ -389,16 +389,16 @@ void generateReport(Product *list) {
     displayHeader();
     
     if(list == NULL) {
-        printf("\033[0;31m"); // Red
+        printf("\033[0;31m");  
         printf("\n\t\t\t\t\t\t\t :( The product list is empty!\n");
-        printf("\033[0m"); // Reset
+        printf("\033[0m");  
         pressAnyKeyToContinue();
         return;
     }
 
-    printf("\033[1;35m"); // Magenta
+    printf("\033[1;35m");  
     printf("\n\t\t\t\t\t\t\t      * Product Inventory Report * \n");
-    printf("\033[0m"); // Reset
+    printf("\033[0m");  
     
     printf("\t\t\t\t\t\t------------------------------------------------------------\n");
     printf("\t\t\t\t\t\t| %-10s | %-20s | %-10s | %-10s |\n", "ID", "Product Name", "Quantity", "Price");
@@ -424,9 +424,9 @@ void generateReport(Product *list) {
 
         FILE *file = fopen(filename, "w");
         if(file == NULL) {
-            printf("\033[0;31m"); // Red
+            printf("\033[0;31m");  
             printf("\n\t\t\t\t\t\t\t :( Error creating file!\n");
-            printf("\033[0m"); // Reset
+            printf("\033[0m");  
         } else {
             fprintf(file, "Product Inventory Report - Generated on %s\n\n", asctime(t));
             fprintf(file, "------------------------------------------------------------\n");
@@ -442,9 +442,9 @@ void generateReport(Product *list) {
             fprintf(file, "------------------------------------------------------------\n");
             fclose(file);
 
-            printf("\033[0;32m"); // Green
+            printf("\033[0;32m");  
             printf("\n\t\t\t\t\t\t\t :) Report saved to %s\n", filename);
-            printf("\033[0m"); // Reset
+            printf("\033[0m");  
         }
     }
 
@@ -454,15 +454,15 @@ void generateReport(Product *list) {
 // Display product list
 void displayList(Product *list) {
     if(list == NULL) {
-        printf("\033[0;31m"); // Red
+        printf("\033[0;31m");  
         printf("\n\t\t\t\t\t\t\t :( The product list is empty!\n");
-        printf("\033[0m"); // Reset
+        printf("\033[0m");  
         return;
     }
 
-    printf("\033[1;35m"); // Magenta
+    printf("\033[1;35m");  
     printf("\n\t\t\t\t\t\t\t      * Product List * \n");
-    printf("\033[0m"); // Reset
+    printf("\033[0m");  
     
     printf("\t\t\t\t\t\tProduct ID | Product Name | Quantity in Stock | Price |\n");
     printf("\t\t\t\t\t\t----------------------------------------------------\n");
@@ -478,17 +478,17 @@ void displayList(Product *list) {
 // Delete from beginning
 void deleteAtBeginning(Product **list) {
     if(*list == NULL) {
-        printf("\033[0;31m"); // Red
+        printf("\033[0;31m");  
         printf("\n\t\t\t\t\t\t\t :( The list is already empty!\n");
-        printf("\033[0m"); // Reset
+        printf("\033[0m");  
         return;
     }
 
     Product *temp = *list;
     *list = (*list)->next;
-    printf("\033[0;32m"); // Green
+    printf("\033[0;32m");  
     printf("\n\t\t\t\t\t\t\t :) Product deleted: %s (ID: %d)\n", temp->name, temp->id);
-    printf("\033[0m"); // Reset
+    printf("\033[0m");  
     free(temp);
     pressAnyKeyToContinue();
 }
@@ -496,16 +496,16 @@ void deleteAtBeginning(Product **list) {
 // Delete from end
 void deleteAtEnd(Product **list) {
     if(*list == NULL) {
-        printf("\033[0;31m"); // Red
+        printf("\033[0;31m");  
         printf("\n\t\t\t\t\t\t\t :( The list is already empty!\n");
-        printf("\033[0m"); // Reset
+        printf("\033[0m");  
         return;
     }
 
     if((*list)->next == NULL) {
-        printf("\033[0;32m"); // Green
+        printf("\033[0;32m");  
         printf("\n\t\t\t\t\t\t\t :) Product deleted: %s (ID: %d)\n", (*list)->name, (*list)->id);
-        printf("\033[0m"); // Reset
+        printf("\033[0m");  
         free(*list);
         *list = NULL;
         pressAnyKeyToContinue();
@@ -521,9 +521,9 @@ void deleteAtEnd(Product **list) {
     }
 
     previous->next = NULL;
-    printf("\033[0;32m"); // Green
+    printf("\033[0;32m");  
     printf("\n\t\t\t\t\t\t\t :) Product deleted: %s (ID: %d)\n", temp->name, temp->id);
-    printf("\033[0m"); // Reset
+    printf("\033[0m");  
     free(temp);
     pressAnyKeyToContinue();
 }
@@ -531,9 +531,9 @@ void deleteAtEnd(Product **list) {
 // Delete from middle
 void deleteInMiddle(Product **list) {
     if(*list == NULL) {
-        printf("\033[0;31m"); // Red
+        printf("\033[0;31m");  
         printf("\n\t\t\t\t\t\t\t :( The list is already empty!\n");
-        printf("\033[0m"); // Reset
+        printf("\033[0m");  
         return;
     }
 
@@ -550,9 +550,9 @@ void deleteInMiddle(Product **list) {
     }
 
     if(temp == NULL) {
-        printf("\033[0;31m"); // Red
+        printf("\033[0;31m");  
         printf("\n\t\t\t\t\t\t\t :( Product with ID %d not found!\n", id);
-        printf("\033[0m"); // Reset
+        printf("\033[0m");  
         pressAnyKeyToContinue();
         return;
     }
@@ -563,9 +563,9 @@ void deleteInMiddle(Product **list) {
         previous->next = temp->next;
     }
 
-    printf("\033[0;32m"); // Green
+    printf("\033[0;32m");  
     printf("\n\t\t\t\t\t\t\t :) Product deleted: %s (ID: %d)\n", temp->name, temp->id);
-    printf("\033[0m"); // Reset
+    printf("\033[0m");  
     free(temp);
     pressAnyKeyToContinue();
 }
@@ -579,13 +579,13 @@ void deleteMenu(Product **list) {
         displayHeader();
         displayList(*list);
 
-        printf("\033[1;33m"); // Yellow
+        printf("\033[1;33m");  
         printf("\n\t\t\t\t\t\tDelete Options:\n");
         printf("\t\t\t\t\t\t1. Delete from beginning\n");
         printf("\t\t\t\t\t\t2. Delete from end\n");
         printf("\t\t\t\t\t\t3. Delete from middle\n");
         printf("\t\t\t\t\t\t4. Return\n");
-        printf("\033[0m"); // Reset
+        printf("\033[0m");  
         printf("\t\t\t\t\t\t * Enter your choice: ");
         scanf("%d", &choice);
 
@@ -600,15 +600,15 @@ void deleteMenu(Product **list) {
                 deleteInMiddle(list);
                 break;
             case 4:
-                printf("\033[0;32m"); // Green
+                printf("\033[0;32m");  
                 printf("\n\t\t\t\t\t\t\t Returning to previous menu...\n");
-                printf("\033[0m"); // Reset
+                printf("\033[0m");  
                 pressAnyKeyToContinue();
                 break;
             default:
-                printf("\033[0;31m"); // Red
+                printf("\033[0;31m");  
                 printf("\n\t\t\t\t\t\t\t :( Invalid choice. Please try again!\n");
-                printf("\033[0m"); // Reset
+                printf("\033[0m");  
                 pressAnyKeyToContinue();
         }
     } while(choice != 4);
